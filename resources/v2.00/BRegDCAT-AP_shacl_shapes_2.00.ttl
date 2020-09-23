@@ -537,7 +537,7 @@
         sh:path rdfs:seeAlso ;
         sh:severity sh:Violation
     ], [
-        sh:nodeKind eli:LegalResource;
+        sh:class eli:LegalResource ;
         sh:path dct:relation ;
         sh:severity sh:Violation
     ] ;
@@ -822,7 +822,7 @@
     a sh:NodeShape ;
     sh:name "Relationship"@en ;
     sh:property [
-        sh:nodeKind :DcatResource_Shape ;
+        sh:node :DcatResource_Shape ;
         sh:minCount 1 ;
         sh:path dct:relation ;
         sh:severity sh:Violation
