@@ -28,7 +28,7 @@
 
 <http://joinup.ec.europa.eu/collection/access-base-registries/solution/abr-specification-registry-registries#shacl>
     dcat:accessURL <http://joinup.ec.europa.eu/collection/access-base-registries/solution/abr-specification-registry-registries/release/200>;
-    dcat:downloadURL <@@@/bregdcat-ap_1.1.0_shacl_shapes.ttl> ;
+    dcat:downloadURL <https://raw.githubusercontent.com/ISAITB/validator-resources-bregdcat-ap/144023f3a94746d8172df868f3a2ebe945c41129/resources/v2.01/BRegDCAT-AP_shacl_shapes_2.00.ttl> ;
     dcatap:availability <http://data.europa.eu/r5r/stable> ;
     dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
     dct:conformsTo <https://www.w3.org/TR/shacl> ;
@@ -40,12 +40,12 @@
     ];
     dct:license <https://creativecommons.org/licenses/by/4.0> ;
     cc:attributionURL <http://ec.europa.eu/> ;
-    dct:modified "2020-07-10"^^xsd:date ;
+    dct:modified "2020-09-23"^^xsd:date ;
     dct:publisher <http://publications.europa.eu/resource/authority/corporate-body/DIGIT> ;
     dct:relation <http://joinup.ec.europa.eu/solution/dcat-application-profile-data-portals-europe/release/200> ;
     dct:description "This document specifies the constraints on properties and classes expressed by BRegDCAT-AP in SHACL."@en ;
     dct:title "The constraints of BRegDCAT Application Profile"@en ;
-    owl:versionInfo "2.0.0" ;
+    owl:versionInfo "2.0.1" ;
     foaf:homepage <http://joinup.ec.europa.eu/collection/access-base-registries/solution/abr-specification-registry-registries/release/200> ;
     foaf:maker [
         foaf:mbox <mailto:ABR@trasysinternational.com> ;
