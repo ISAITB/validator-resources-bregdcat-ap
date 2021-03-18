@@ -316,12 +316,6 @@
         sh:path dcat:themeTaxonomy ;
     	sh:description "Multiple themes can be used but at least <http://publications.europa.eu/resource/authority/data-theme> should be present" ;
         sh:severity sh:Warning
-    ], [
-        sh:pattern "^http://eurovoc.europa.eu/.+$";
-        sh:nodeKind sh:IRI ;
-        sh:path dcat:themeTaxonomy ;
-    	sh:description "Multiple themes can be used but at least <http://eurovoc.europa.eu/.+> should be present" ;
-        sh:severity sh:Warning
     ] ;
     sh:targetClass dcat:Catalog.
 
@@ -339,12 +333,7 @@
         sh:path dct:publisher ;
         sh:severity sh:Warning
     ], [
-        sh:node [
-            a sh:NodeShape ;
-            sh:or (:DataThemeRestriction
-                    :EurovocThemeRestriction
-                    )
-            ];
+        sh:node :DataThemeRestriction;
         sh:nodeKind sh:IRI ;
         sh:path dcat:theme ;
         sh:severity sh:Warning
@@ -385,12 +374,7 @@
         sh:path dct:spatial ;
         sh:severity sh:Warning
     ], [
-        sh:node [
-            a sh:NodeShape ;
-            sh:or (:DataThemeRestriction
-                    :EurovocThemeRestriction
-                    )
-            ];
+        sh:node :DataThemeRestriction;
         sh:nodeKind sh:IRI ;
         sh:path dcat:theme ;
         sh:severity sh:Warning

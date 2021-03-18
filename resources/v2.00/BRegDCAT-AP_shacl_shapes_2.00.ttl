@@ -374,6 +374,7 @@
         sh:path dcat:temporalResolution ;
         sh:severity sh:Violation
     ], [
+        sh:maxCount 1 ;
         sh:class skos:Concept ;
         sh:path dct:type ;
         sh:severity sh:Violation
@@ -871,7 +872,7 @@
 
 :CategoryScheme_Shape
     a sh:NodeShape ;
-    sh:name "Category Scheme"@en ;
+    sh:name "Thematic Scheme"@en ;
     sh:property [
         sh:minCount 1 ;
         sh:nodeKind sh:Literal ;
@@ -882,7 +883,7 @@
 
 :Category_Shape
     a sh:NodeShape ;
-    sh:name "Category"@en ;
+    sh:name "Theme"@en ;
     sh:property [
         sh:minCount 1 ;
         sh:nodeKind sh:Literal ;
