@@ -96,7 +96,7 @@
         sh:minCount 1 ;
         sh:path dct:modified ;
         sh:severity sh:Violation ;
-        sh:shape :DateOrDateTimeDataType_Shape
+        sh:node :DateOrDateTimeDataType_Shape
     ], [
         sh:class dct:Standard ;
         sh:maxCount 1 ;
@@ -311,7 +311,7 @@
         sh:maxCount 1 ;
         sh:path dct:issued ;
         sh:severity sh:Violation ;
-        sh:shape :DateOrDateTimeDataType_Shape
+        sh:node :DateOrDateTimeDataType_Shape
     ], [
         sh:class dct:LinguisticSystem ;
         sh:path dct:language ;
@@ -320,7 +320,7 @@
         sh:maxCount 1 ;
         sh:path dct:modified ;
         sh:severity sh:Violation ;
-        sh:shape :DateOrDateTimeDataType_Shape
+        sh:node :DateOrDateTimeDataType_Shape
     ], [
         sh:class adms:Identifier ;
         sh:path adms:identifier ;
@@ -582,7 +582,7 @@
         sh:maxCount 1 ;
         sh:path dcat:endDate ;
         sh:severity sh:Violation ;
-        sh:shape :DateOrDateTimeDataType_Shape
+        sh:node :DateOrDateTimeDataType_Shape
     ], [
         sh:class time:Instant ;
         sh:maxCount 1 ;
@@ -597,7 +597,7 @@
         sh:maxCount 1 ;
         sh:path dcat:startDate ;
         sh:severity sh:Violation ;
-        sh:shape :DateOrDateTimeDataType_Shape
+        sh:node :DateOrDateTimeDataType_Shape
     ] ;
     sh:targetClass dct:PeriodOfTime .
 
