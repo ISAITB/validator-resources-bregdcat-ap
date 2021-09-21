@@ -53,60 +53,124 @@
         foaf:page <https://joinup.ec.europa.eu/user/72090>
     ] .
 
+# Using sh:or alongside sh:hasValue to allow IRIs to use either HTTP or HTTPS is really verbose.
+# The dash:hasValueIn constraint component would be a great fit for this use case. 
+# However, DASH does not seem to be supported by the BRegDCAT-AP Validator.
+
 :AccessRightsRestriction
     a sh:NodeShape ;
     rdfs:comment "Access Rights restriction" ;
     rdfs:label "Access Rights restriction" ;
-    sh:property [
-        sh:hasValue <http://publications.europa.eu/resource/authority/access-right> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
+    sh:or (
+        [
+            sh:property [
+                sh:hasValue <http://publications.europa.eu/resource/authority/access-right> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+        [
+            sh:property [
+                sh:hasValue <https://publications.europa.eu/resource/authority/access-right> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+    ) .
 
 :AvailabilityRestriction
     a sh:NodeShape ;
     rdfs:comment "Availability restriction" ;
     rdfs:label "Availability restriction" ;
-    sh:property [
-        sh:hasValue <http://data.europa.eu/r5r/availability/1.0> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
+    sh:or (
+        [
+            sh:property [
+                sh:hasValue <http://data.europa.eu/r5r/availability/1.0> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+        [
+            sh:property [
+                sh:hasValue <https://data.europa.eu/r5r/availability/1.0> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+    ) .
 
 :ContinentRestriction
     a sh:NodeShape ;
     rdfs:comment "Continent restriction" ;
     rdfs:label "Continent restriction" ;
-    sh:property [
-        sh:hasValue <http://publications.europa.eu/resource/authority/continent> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
+    sh:or (
+        [
+            sh:property [
+                sh:hasValue <http://publications.europa.eu/resource/authority/continent> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+        [
+            sh:property [
+                sh:hasValue <https://publications.europa.eu/resource/authority/continent> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+    ) .
 
 :CorporateBodyRestriction
     a sh:NodeShape ;
     rdfs:comment "Corporate Body Restriction" ;
     rdfs:label "Corporate Body Restriction" ;
-    sh:property [
-        sh:hasValue <http://publications.europa.eu/resource/authority/corporate-body> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
+    sh:or (
+        [
+            sh:property [
+                sh:hasValue <http://publications.europa.eu/resource/authority/corporate-body> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+        [
+            sh:property [
+                sh:hasValue <https://publications.europa.eu/resource/authority/corporate-body> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+    ) .
 
 :CountryRestriction
     a sh:NodeShape ;
     rdfs:comment "Country restriction" ;
     rdfs:label "Country restriction" ;
-    sh:property [
-        sh:hasValue <http://publications.europa.eu/resource/authority/country> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
+    sh:or (
+        [
+            sh:property [
+                sh:hasValue <http://publications.europa.eu/resource/authority/country> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+        [
+            sh:property [
+                sh:hasValue <https://publications.europa.eu/resource/authority/country> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+    ) .
 
 :Identifier_Shape
     a sh:NodeShape ;
@@ -132,12 +196,24 @@
     a sh:NodeShape ;
     rdfs:comment "Data Theme Restriction" ;
     rdfs:label "Data Theme Restriction" ;
-    sh:property [
-        sh:hasValue <http://publications.europa.eu/resource/authority/data-theme> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
+    sh:or (
+        [
+            sh:property [
+                sh:hasValue <http://publications.europa.eu/resource/authority/data-theme> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+        [
+            sh:property [
+                sh:hasValue <https://publications.europa.eu/resource/authority/data-theme> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+    ) .
 
 :EurovocThemeRestriction
     a sh:NodeShape ;
@@ -154,103 +230,214 @@
     a sh:NodeShape ;
     rdfs:comment "File Type Restriction" ;
     rdfs:label "File Type Restriction" ;
-    sh:property [
-        sh:hasValue <http://publications.europa.eu/resource/authority/file-type> ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
+    sh:or (
+        [
+            sh:property [
+                sh:path skos:inScheme ;
+                sh:nodeKind sh:IRI ;
+                sh:hasValue <http://publications.europa.eu/resource/authority/file-type> ;
+            ]
+        ]
+        [
+            sh:property [
+                sh:path skos:inScheme ;
+                sh:nodeKind sh:IRI ;
+                sh:hasValue <https://publications.europa.eu/resource/authority/file-type> ;
+            ]
+        ]
+    ) .
 
 :FrequencyRestriction
     a sh:NodeShape ;
     rdfs:comment "Frequency Restriction" ;
     rdfs:label "Frequency Restriction" ;
-    sh:property [
-        sh:hasValue <http://publications.europa.eu/resource/authority/frequency> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
+    sh:or (
+        [
+            sh:property [
+                sh:hasValue <http://publications.europa.eu/resource/authority/frequency> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+        [
+            sh:property [
+                sh:hasValue <https://publications.europa.eu/resource/authority/frequency> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+    ) .
 
 :GeoNamesRestriction
     a sh:NodeShape ;
     rdfs:comment "Geo names restriction" ;
     rdfs:label "Geo names restriction" ;
-    sh:property [
-        sh:hasValue <http://sws.geonames.org> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
+    sh:or (
+        [
+            sh:property [
+                sh:hasValue <http://sws.geonames.org> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+        [
+            sh:property [
+                sh:hasValue <https://sws.geonames.org> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+    ) .
 
 :LanguageRestriction
     a sh:NodeShape ;
     rdfs:comment "Language Restriction" ;
     rdfs:label "Language Restriction" ;
-    sh:property [
-        sh:hasValue <http://publications.europa.eu/resource/authority/language> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
+    sh:or (
+        [
+            sh:property [
+                sh:hasValue <http://publications.europa.eu/resource/authority/language> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+        [
+            sh:property [
+                sh:hasValue <https://publications.europa.eu/resource/authority/language> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+    ) .
 
 :LicenceTypeRestriction
     a sh:NodeShape ;
     rdfs:comment "Licence type restriction" ;
     rdfs:label "Licence type restriction" ;
-    sh:property [
-        sh:hasValue <http://publications.europa.eu/resource/authority/licence> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
+    sh:or (
+        [
+            sh:property [
+                sh:hasValue <http://publications.europa.eu/resource/authority/licence> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+        [
+            sh:property [
+                sh:hasValue <https://publications.europa.eu/resource/authority/licence> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+    ) .
 
 :PlaceRestriction
     a sh:NodeShape ;
     rdfs:comment "Place restriction" ;
     rdfs:label "Place restriction" ;
-    sh:property [
-        sh:class skos:ConceptScheme ;
-        sh:hasValue <http://publications.europa.eu/resource/authority/place> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
+    sh:or (
+        [
+            sh:property [
+                sh:class skos:ConceptScheme ;
+                sh:hasValue <http://publications.europa.eu/resource/authority/place> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+        [
+            sh:property [
+                sh:class skos:ConceptScheme ;
+                sh:hasValue <https://publications.europa.eu/resource/authority/place> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+    ) .
 
 :PublisherTypeRestriction
     a sh:NodeShape ;
     rdfs:comment "Publisher type restriction" ;
     rdfs:label "Publisher type restriction" ;
-    sh:property [
-        sh:class skos:ConceptScheme ;
-        sh:hasValue <http://purl.org/adms/publishertype/1.0> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
+    sh:or (
+        [
+            sh:property [
+                sh:class skos:ConceptScheme ;
+                sh:hasValue <http://purl.org/adms/publishertype/1.0> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+        [
+            sh:property [
+                sh:class skos:ConceptScheme ;
+                sh:hasValue <https://purl.org/adms/publishertype/1.0> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+    ) .
 
 :StatusRestriction
     a sh:NodeShape ;
     rdfs:comment "Status restriction" ;
     rdfs:label "Status restriction" ;
-    sh:property [
-        sh:class skos:ConceptScheme ;
-        sh:hasValue <http://purl.org/adms/status/1.0> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
+    sh:or (
+        [
+            sh:property [
+                sh:class skos:ConceptScheme ;
+                sh:hasValue <http://purl.org/adms/status/1.0> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+        [
+            sh:property [
+                sh:class skos:ConceptScheme ;
+                sh:hasValue <https://purl.org/adms/status/1.0> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+    ) .
 
 :LegalResourceTypeRestriction
     a sh:NodeShape ;
     rdfs:comment "Legal Resource Type restriction" ;
     rdfs:label "Legal Resource Type restriction" ;
-    sh:property [
-        sh:class skos:ConceptScheme ;
-        sh:hasValue <http://publications.europa.eu/resource/authority/resource-type> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
+    sh:or (
+        [
+            sh:property [
+                sh:class skos:ConceptScheme ;
+                sh:hasValue <http://publications.europa.eu/resource/authority/resource-type> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+        [
+            sh:property [
+                sh:class skos:ConceptScheme ;
+                sh:hasValue <http://publications.europa.eu/resource/authority/resource-type> ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI ;
+                sh:path skos:inScheme
+            ]
+        ]
+    ) .
 
 :Legal_Resource_ShapeCV 
     a sh:NodeShape ;
