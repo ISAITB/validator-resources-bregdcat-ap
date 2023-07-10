@@ -1,7 +1,7 @@
 # BRegDCAT-AP Validator
 
 The files you may edit to adapt the validation are as follows:
-* Folder `resources` contains the validation artefacts and vocabularies (in sub-folders per validation type).
+* Folder `resources` contains the validation artefacts and vocabularies (in subfolders per validation type).
 * File `resources\config.properties` contains the configuration that you may want to adapt.
 
 To publish changes commit and push your updates. In 1-2 minutes the online service will be updated.
